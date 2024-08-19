@@ -6,6 +6,7 @@ import Home from "./Pages/Home";
 import Header from "./components/Header";
 import Notfound from "./Pages/Notfound";
 import Product from "./Pages/Product";
+import Contact from "./Pages/Contact";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +23,15 @@ const router = createBrowserRouter([
       <>
         <Header />
         <Product />
+      </>
+    ),
+  },
+  {
+    path: "/contact",
+    element: (
+      <>
+        <Header />
+        <Contact />
       </>
     ),
   },
