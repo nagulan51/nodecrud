@@ -15,7 +15,7 @@ export default function Edit({ setclose, id }) {
     if (id) {
       const api = new Api();
       api.getProduit(id).then((data) => {
-        setProduct(data[0]);
+        setProduct(data);
       });
     }
   }, [id]);

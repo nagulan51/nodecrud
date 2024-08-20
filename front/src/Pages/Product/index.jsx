@@ -9,7 +9,7 @@ export default function Product() {
   useEffect(() => {
     const api = new Api();
     api.getProduit(id).then((data) => {
-      setProduct(data[0]);
+      setProduct(data);
     });
   }, [id]);
 

@@ -1,6 +1,5 @@
-// shop.model.js
 import { DataTypes } from "@sequelize/core";
-import sequelize from "../../services/db.js"; // Adjust the path as needed
+import sequelize from "../services/db.js";
 
 const Produits = sequelize.define(
   "produits",
@@ -11,25 +10,26 @@ const Produits = sequelize.define(
       autoIncrement: true,
     },
     nom: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: false,
     },
     prix: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.DECIMAL(5, 2),
       allowNull: false,
     },
     image: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: false,
     },
   },
   {
-    tableName: "produits", // Use the table name if needed
-    timestamps: false, // Disable timestamps if not required
+    tableName: "produits",
+    timestamps: false,
+    log: false,
   }
 );
 

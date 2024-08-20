@@ -1,8 +1,8 @@
 import { Sequelize } from "@sequelize/core";
 import dotenv from "dotenv";
+
 dotenv.config();
 
-console.log(process.env.DB_NAME);
 const sequelize = new Sequelize({
   dialect: "mysql",
   database: process.env.DB_NAME,
@@ -10,6 +10,7 @@ const sequelize = new Sequelize({
   password: process.env.DB_PASSWORD,
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
+  logging: false,
   dialectOptions: {
     socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock",
   },
