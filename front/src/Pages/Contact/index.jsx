@@ -6,7 +6,7 @@ export default function Contact() {
           <div className="lg:w-1/2">
             <img
               className="w-full h-full object-cover"
-              src="https://images.unsplash.com/photo-1587613861916-2a3f3d3d1a6a"
+              src="https://picsum.photos/1000/1000"
               alt="Contact"
             />
           </div>
@@ -16,20 +16,16 @@ export default function Contact() {
               <p className="mt-4 text-gray-600 text-lg">
                 Contactez-nous pour plus d'informations
               </p>
+              <p>
+                Vous pouvez nous contacter par téléphone ou par email. Nous
+                répondrons à toutes vos questions.
+              </p>
             </div>
             <div className="mt-6">
               <p className="text-2xl font-bold text-gray-900">06 12 34 56 78</p>
               <button className="mt-4 w-full bg-yellow-500 text-white text-lg font-semibold py-3 rounded-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
                 Envoyer un email
               </button>
-              <button className="mt-3 w-full bg-gray-200 text-gray-700 text-lg font-semibold py-3 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-50">
-                Acheter maintenant
-              </button>
-              <p className="mt-4 text-sm text-gray-500">transaction sécurisé</p>
-              <p className="mt-2 text-sm text-gray-500">
-                Vendu par
-                <span className="text-blue-600"> Ipssi</span>.
-              </p>
             </div>
           </div>
         </div>

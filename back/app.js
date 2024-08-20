@@ -1,10 +1,12 @@
-const express = require("express");
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import shopRouter from "./routes/shop/index.js";
+import loginRouter from "./routes/login/index.js";
 const app = express();
-require("dotenv").config();
-var cors = require("cors");
 
-var shopRouter = require("./routes/shop/index.js");
-//allow all cors
+dotenv.config();
+
 app.use(cors());
 
 app.get("/", (req, res) => {
@@ -12,6 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/shop", shopRouter);
+app.use("/login", loginRouter);
 
 app.listen(process.env.SERVER_PORT, () => {
   console.log(`SERVER RUN ON  http://localhost:${process.env.SERVER_PORT}`);

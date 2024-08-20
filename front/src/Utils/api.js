@@ -1,5 +1,3 @@
-//env file``
-console.log(process.env.REACT_APP_API_URI);
 class Api {
   constructor(token, url) {
     this.token = localStorage.getItem("token");

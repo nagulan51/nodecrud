@@ -1,22 +1,17 @@
-const express = require("express");
+import express from "express";
 const shop = express.Router();
-const con = require("../../services/database");
+import db from "../../services/database.js";
 shop.get("/", (req, res) => {
   res.json({ message: "Hello from the shop!" });
 });
 
 shop.get("/all", (req, res) => {
   try {
-    con.query("SELECT * FROM produits", function (err, result) {
-      if (err) {
-        res.status(500).json({
-          message: "erreur",
-          error: "impossible de trouver les produits",
-        });
-      }
-      res.json(result);
-    });
+    const maindb = new db();
+    const products = maindb.GetAllProduct();
+    res.json(products);
   } catch (err) {
+    console.log(err);
     res.status(500).json({
       message: "erreur",
       error: "impossible de trouver les produits",
@@ -44,4 +39,5 @@ shop.get("/product/:id", (req, res) => {
     });
   }
 });
-module.exports = shop;
+
+export default shop;

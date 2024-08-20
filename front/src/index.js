@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Notfound from "./Pages/Notfound";
 import Product from "./Pages/Product";
 import Contact from "./Pages/Contact";
+import Login from "./Pages/Login";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,6 +33,15 @@ const router = createBrowserRouter([
       <>
         <Header />
         <Contact />
+      </>
+    ),
+  },
+  {
+    path: "/login",
+    element: (
+      <>
+        <Header />
+        <Login />
       </>
     ),
   },

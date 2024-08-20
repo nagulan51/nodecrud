@@ -1,17 +1,18 @@
-var mysql = require("mysql");
+import produits from "../routes/shop/shop.model.js";
+import sequelize from "../services/db.js";
+class db {
+  constructor() {
+    this.sequelize = sequelize;
+  }
 
-var con = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
-  database: process.env.DB_NAME,
-  socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock",
-});
+  async GetAllProduct() {
+    try {
+      return await produits.findAll();
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      throw error;
+    }
+  }
+}
 
-con.connect(function (err) {
-  if (err) throw err;
-  console.log("base de données connecté");
-});
-
-module.exports = con;
+export default db;
